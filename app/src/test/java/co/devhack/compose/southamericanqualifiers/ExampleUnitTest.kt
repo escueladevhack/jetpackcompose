@@ -1,4 +1,4 @@
-package co.devhack.compose.eliminatorias
+package co.devhack.compose.southamericanqualifiers
 
 import org.junit.Test
 

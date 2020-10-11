@@ -8,7 +8,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "co.devhack.compose.eliminatorias"
+        applicationId "co.devhack.compose.southamericanqualifiers"
         minSdkVersion 29
         targetSdkVersion 30
         versionCode 1

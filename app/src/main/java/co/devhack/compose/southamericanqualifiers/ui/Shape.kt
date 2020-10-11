@@ -1,4 +1,4 @@
-package co.devhack.compose.eliminatorias.ui
+package co.devhack.compose.southamericanqualifiers.ui
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

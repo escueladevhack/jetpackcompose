@@ -1,4 +1,4 @@
-package co.devhack.compose.eliminatorias
+package co.devhack.compose.southamericanqualifiers
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -8,13 +8,13 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.setContent
 import androidx.ui.tooling.preview.Preview
-import co.devhack.compose.eliminatorias.ui.EliminatoriasSudamericanasTheme
+import co.devhack.compose.southamericanqualifiers.ui.SouthAmericanQualifiersTheme
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            EliminatoriasSudamericanasTheme {
+            SouthAmericanQualifiersTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
                     Greeting("Android")
@@ -32,7 +32,7 @@ fun Greeting(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    EliminatoriasSudamericanasTheme {
+    SouthAmericanQualifiersTheme {
         Greeting("Android")
     }
 }
