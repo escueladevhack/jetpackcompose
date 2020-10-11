@@ -32,9 +32,9 @@ class MainActivity : AppCompatActivity() {
     @Composable
     fun TeamsScreen(teamsState: State<TeamsViewModel.State?>) {
         Surface(color = MaterialTheme.colors.background) {
-            when (teamsState.value) {
+            when (val state = teamsState.value) {
                 is TeamsViewModel.State.Loading -> Text("Loading...")
-                is TeamsViewModel.State.Ready -> TeamsList((teamsState.value as TeamsViewModel.State.Ready).teams)
+                is TeamsViewModel.State.Ready -> TeamsList(state.teams)
             }
         }
     }
