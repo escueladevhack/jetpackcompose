@@ -1,4 +1,4 @@
-package co.devhack.compose.southamericanqualifiers.ui
+package co.devhack.compose.southamericanqualifiers.ui.commons
 
 import androidx.compose.ui.graphics.Color
 
