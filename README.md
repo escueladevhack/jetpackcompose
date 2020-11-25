@@ -1,2 +1,0 @@
-# jetpackcompose
-Workshop Jetpack Compose

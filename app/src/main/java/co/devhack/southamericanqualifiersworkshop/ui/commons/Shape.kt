@@ -1,4 +1,4 @@
-package co.devhack.compose.southamericanqualifiers.ui
+package co.devhack.southamericanqualifiersworkshop.ui.commons
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

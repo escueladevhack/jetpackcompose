@@ -1,8 +1,8 @@
-package co.devhack.compose.southamericanqualifiers.data
+package co.devhack.southamericanqualifiersworkshop.data
 
-import co.devhack.compose.southamericanqualifiers.model.Player
-import co.devhack.compose.southamericanqualifiers.model.PlayerPosition
-import co.devhack.compose.southamericanqualifiers.model.Team
+import co.devhack.southamericanqualifiersworkshop.model.Player
+import co.devhack.southamericanqualifiersworkshop.model.PlayerPosition
+import co.devhack.southamericanqualifiersworkshop.model.Team
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext

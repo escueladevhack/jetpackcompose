@@ -1,9 +1,9 @@
-package co.devhack.compose.southamericanqualifiers.viewmodels
+package co.devhack.southamericanqualifiersworkshop.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import co.devhack.compose.southamericanqualifiers.data.Repository
-import co.devhack.compose.southamericanqualifiers.model.Team
+import co.devhack.southamericanqualifiersworkshop.data.Repository
+import co.devhack.southamericanqualifiersworkshop.model.Team
 
 class TeamsViewModel : ViewModel() {
 

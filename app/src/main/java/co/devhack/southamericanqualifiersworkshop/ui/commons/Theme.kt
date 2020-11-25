@@ -1,4 +1,4 @@
-package co.devhack.compose.southamericanqualifiers.ui
+package co.devhack.southamericanqualifiersworkshop.ui.commons
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
@@ -28,7 +28,7 @@ private val LightColorPalette = lightColors(
 )
 
 @Composable
-fun SouthAmericanQualifiersTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
+fun SouthAmericanQualifiersWorkshopTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
     val colors = if (darkTheme) {
         DarkColorPalette
     } else {

@@ -1,4 +1,4 @@
-package co.devhack.compose.southamericanqualifiers
+package co.devhack.southamericanqualifiersworkshop
 
 import org.junit.Test
 

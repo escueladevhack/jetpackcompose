@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">South American Qualifiers</string>
+    <string name="title_activity_detail_team">Team Detail</string>
+    <string name="matches_draw">PE</string>
+    <string name="matches_lost">PP</string>
+    <string name="matches_won">PG</string>
+    <string name="players">JUGADORES</string>
+    <string name="match_played">Partidos Jugados</string>
+    <string name="south_american_qualifiers">Eliminatorias Sudamericanas</string>
+    <string name="teams">Equipos</string>
 </resources>
