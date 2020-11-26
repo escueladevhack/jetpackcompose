@@ -1,6 +1,7 @@
 package co.devhack.compose.southamericanqualifiers.ui.activities
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.BorderStroke
@@ -14,6 +15,7 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.SportsSoccer
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -26,10 +28,11 @@ import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
 import co.devhack.compose.southamericanqualifiers.R
 import co.devhack.compose.southamericanqualifiers.model.Team
-import co.devhack.compose.southamericanqualifiers.ui.commons.SouthAmericanQualifiersTheme
+import co.devhack.compose.southamericanqualifiers.ui.SouthAmericanQualifiersTheme
+import co.devhack.compose.southamericanqualifiers.viewmodels.TeamsViewModel
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class TeamsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -40,10 +43,10 @@ class MainActivity : AppCompatActivity() {
 
 @Composable
 fun TeamActivityUI(
-    modifier: Modifier = Modifier,
     playedMatches: Int,
     totalMatches: Int,
-    teams: List<Team>
+    teams: List<Team>,
+    modifier: Modifier = Modifier
 ) {
     SouthAmericanQualifiersTheme {
         Surface(
@@ -201,14 +204,10 @@ fun Teams(
     modifier: Modifier = Modifier,
     teams: List<Team>
 ) {
-    LazyColumnFor(items = teams,
-        modifier = modifier.fillMaxSize(),
-        itemContent = { team ->
-            TeamItem(team)
-        })
+    //TODO: ...
 }
 
-@Composable
+/*
 fun TeamItem(team: Team) {
     Card(
         modifier = Modifier
@@ -286,3 +285,5 @@ fun PreviewTeams() {
         }
     )
 }
+
+ */

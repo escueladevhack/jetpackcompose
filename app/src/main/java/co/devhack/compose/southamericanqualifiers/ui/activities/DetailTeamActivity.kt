@@ -1,5 +1,6 @@
 package co.devhack.compose.southamericanqualifiers.ui.activities
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
@@ -20,24 +21,30 @@ import androidx.compose.runtime.Providers
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawShadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.ui.tooling.preview.Devices
 import androidx.ui.tooling.preview.Preview
 import co.devhack.compose.southamericanqualifiers.R
+import co.devhack.compose.southamericanqualifiers.data.Repository
 import co.devhack.compose.southamericanqualifiers.model.Player
 import co.devhack.compose.southamericanqualifiers.model.PlayerPosition
-import co.devhack.compose.southamericanqualifiers.ui.commons.SouthAmericanQualifiersTheme
+import co.devhack.compose.southamericanqualifiers.ui.SouthAmericanQualifiersTheme
 import java.util.*
 
 class DetailTeamActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            PreviewArgentinaTeam()
         }
     }
 }
@@ -257,14 +264,16 @@ fun PlayerItem(player: Player) {
 
 @Composable
 fun ImagePlayerItem(@DrawableRes uriPhoto: Int) {
-    Surface(
-        modifier = Modifier.preferredSize(50.dp),
-        shape = CircleShape,
-        color = MaterialTheme.colors.onSurface.copy(alpha = 0.2f)
-    ) {
-        //Image(vectorResource(uriPhoto))
-        //TODO: imagen del jugador
-    }
+
+    val resource = imageResource(id = uriPhoto)
+    Image(
+        resource,
+        modifier = Modifier
+            .size(72.dp)
+            .padding(4.dp)
+            .drawShadow(8.dp, CircleShape),
+        contentScale = ContentScale.Crop
+    )
 }
 
 @Composable
@@ -301,45 +310,18 @@ fun InfoPlayerMatchesItem(player: Player) {
     }
 }
 
-@Preview(showBackground = true)
+@Preview(
+    name = "Argentina",
+    group = "1"
+)
 @Composable
-fun PreviewDetailTeam() {
+fun PreviewArgentinaTeam() {
     DetailTeamActivityUI(
         nameTeam = "Argentina",
         flagTeam = R.drawable.ic_launcher_background,
         matchesWon = 5,
         matchesDraw = 5,
         matchesLost = 3,
-        players = mutableListOf<Player>().apply {
-            add(
-                Player(
-                    id = 1,
-                    name = "Juan G",
-                    surname = "Gomez",
-                    position = PlayerPosition.DEFENDER,
-                    teamId = 1
-                )
-            )
-
-            add(
-                Player(
-                    id = 1,
-                    name = "Matias ",
-                    surname = "Torres",
-                    position = PlayerPosition.FORWARD,
-                    teamId = 1
-                )
-            )
-
-            add(
-                Player(
-                    id = 1,
-                    name = "Pelufo",
-                    surname = "Gomez",
-                    position = PlayerPosition.MIDFIELDER,
-                    teamId = 1
-                )
-            )
-        }
+        players = Repository.argentinaPlayers
     )
 }
