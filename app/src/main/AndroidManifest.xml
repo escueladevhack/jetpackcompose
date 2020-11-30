@@ -12,14 +12,14 @@
         <activity
             android:name=".ui.activities.DetailTeamActivity"
             android:label="@string/title_activity_detail_team"
-            android:theme="@style/Theme.SouthAmericanQualifiers.NoActionBar"></activity>
+            android:theme="@style/Theme.SouthAmericanQualifiers.NoActionBar">
+        </activity>
         <activity
-            android:name=".ui.activities.MainActivity"
+            android:name=".ui.activities.TeamsActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.SouthAmericanQualifiers.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

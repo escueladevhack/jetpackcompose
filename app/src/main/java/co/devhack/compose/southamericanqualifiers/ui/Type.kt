@@ -1,4 +1,4 @@
-package co.devhack.compose.southamericanqualifiers.ui.commons
+package co.devhack.compose.southamericanqualifiers.ui
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
@@ -12,17 +12,9 @@ val typography = Typography(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp
-    )
-    /* Other default text styles to override
-    button = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.W500,
-        fontSize = 14.sp
     ),
-    caption = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 12.sp
+    h5 = TextStyle(
+        fontSize = 40.sp
     )
-    */
+
 )

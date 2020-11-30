@@ -1,5 +1,6 @@
 package co.devhack.compose.southamericanqualifiers.data
 
+import co.devhack.compose.southamericanqualifiers.R
 import co.devhack.compose.southamericanqualifiers.model.Player
 import co.devhack.compose.southamericanqualifiers.model.PlayerPosition
 import co.devhack.compose.southamericanqualifiers.model.Team
@@ -22,6 +23,43 @@ object Repository {
         Team(8, "Perú", 0),
         Team(9, "Uruguay", 0),
         Team(10, "Venezuela", 0),
+    )
+
+    val argentinaPlayers = listOf(
+        // Argentina
+        Player(1, "Lionel", "Messi", PlayerPosition.FORWARD, 1, uriPhoto = R.drawable.messi),
+        Player(2, "Paulo", "Dybala", PlayerPosition.FORWARD, 1, uriPhoto = R.drawable.messi),
+        Player(3, "Sergio", "Agüero", PlayerPosition.FORWARD, 1, uriPhoto = R.drawable.messi),
+        Player(4, "Lautaro", "Martinez", PlayerPosition.FORWARD, 1, uriPhoto = R.drawable.messi),
+        Player(5, "Franco", "Armani", PlayerPosition.GOALKEEPER, 1, uriPhoto = R.drawable.messi),
+        Player(6, "Lucas", "Ocampos", PlayerPosition.MIDFIELDER, 1, uriPhoto = R.drawable.messi),
+        Player(7, "Rodrigo", "De Paul", PlayerPosition.MIDFIELDER, 1, uriPhoto = R.drawable.messi),
+        Player(8, "Leandro", "Paredes", PlayerPosition.MIDFIELDER, 1, uriPhoto = R.drawable.messi),
+        Player(9, "Marcos", "Acuña", PlayerPosition.MIDFIELDER, 1, uriPhoto = R.drawable.messi),
+        Player(10, "Nicolas", "Otamendi", PlayerPosition.DEFENDER, 1, uriPhoto = R.drawable.messi),
+        Player(11, "Nicolas", "Tagliafico", PlayerPosition.DEFENDER, 1, uriPhoto = R.drawable.messi),
+        Player(12, "Lucas", "Martinez Quarta", PlayerPosition.DEFENDER, 1, uriPhoto = R.drawable.messi),
+        Player(13, "Gonzalo", "Montiel", PlayerPosition.DEFENDER, 1, uriPhoto = R.drawable.messi),
+        Player(14, "Lucas", "Alario", PlayerPosition.FORWARD, 1, uriPhoto = R.drawable.messi),
+        Player(15, "Nehuén", "Perez", PlayerPosition.DEFENDER, 1, uriPhoto = R.drawable.messi)
+    )
+
+    val boliviaPlayers = listOf(
+        Player(16, "Carlos", "Lampe", PlayerPosition.GOALKEEPER, 2),
+        Player(17, "José", "Sagredo", PlayerPosition.DEFENDER, 2),
+        Player(18, "Gabriel", "Valverde", PlayerPosition.DEFENDER, 2),
+        Player(19, "José", "Carrasco", PlayerPosition.DEFENDER, 2),
+        Player(20, "Jesús Manuel", "Sagredo Chávez", PlayerPosition.DEFENDER, 2),
+        Player(21, "Bruno", "Miranda", PlayerPosition.MIDFIELDER, 2),
+        Player(22, "Luis Fernando", "Saldías Muños", PlayerPosition.MIDFIELDER, 2),
+        Player(23, "Diego", "Wayar", PlayerPosition.MIDFIELDER, 2),
+        Player(24, "Antonio", "Bustamante", PlayerPosition.MIDFIELDER, 2),
+        Player(25, "Christian", "Árabe", PlayerPosition.MIDFIELDER, 2),
+        Player(26, "César", "Menacho", PlayerPosition.FORWARD, 2),
+        Player(27, "Guimer", "Justiniano", PlayerPosition.DEFENDER, 2),
+        Player(28, "Boris", "Cespedes", PlayerPosition.MIDFIELDER, 2),
+        Player(29, "Jhasmani", "Campos", PlayerPosition.MIDFIELDER, 2),
+        Player(30, "Franz", "Gonzales", PlayerPosition.MIDFIELDER, 2)
     )
 
     private val players = listOf(

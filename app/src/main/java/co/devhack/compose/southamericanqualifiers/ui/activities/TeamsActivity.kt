@@ -1,6 +1,8 @@
 package co.devhack.compose.southamericanqualifiers.ui.activities
 
 import android.os.Bundle
+import android.util.Log
+import androidx.activity.viewModels
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.BorderStroke
@@ -14,10 +16,12 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.SportsSoccer
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.ContextAmbient
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
@@ -26,24 +30,32 @@ import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
 import co.devhack.compose.southamericanqualifiers.R
 import co.devhack.compose.southamericanqualifiers.model.Team
-import co.devhack.compose.southamericanqualifiers.ui.commons.SouthAmericanQualifiersTheme
+import co.devhack.compose.southamericanqualifiers.ui.SouthAmericanQualifiersTheme
+import co.devhack.compose.southamericanqualifiers.viewmodels.TeamsViewModel
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class TeamsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
 
+            val viewModel = viewModels<TeamsViewModel>().value
+            val state = viewModel.teams.observeAsState()
+
+            when(val currentState = state.value) {
+                is TeamsViewModel.State.Loading -> CircularProgressIndicator()
+                is TeamsViewModel.State.Ready -> TeamActivityUI(5, 5, currentState.teams)
+            }
         }
     }
 }
 
 @Composable
 fun TeamActivityUI(
-    modifier: Modifier = Modifier,
     playedMatches: Int,
     totalMatches: Int,
-    teams: List<Team>
+    teams: List<Team>,
+    modifier: Modifier = Modifier
 ) {
     SouthAmericanQualifiersTheme {
         Surface(
@@ -201,15 +213,18 @@ fun Teams(
     modifier: Modifier = Modifier,
     teams: List<Team>
 ) {
-    LazyColumnFor(items = teams,
-        modifier = modifier.fillMaxSize(),
-        itemContent = { team ->
-            TeamItem(team)
-        })
+    LazyColumnFor(
+        items = teams,
+    modifier = Modifier.fillMaxWidth()) { item ->
+        TeamItem(item) {
+            Log.e("Item clickeado!", "Equipo clickeado: ${it.name}")
+
+        }
+    }
 }
 
 @Composable
-fun TeamItem(team: Team) {
+fun TeamItem(team: Team, callback: (Team) -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -221,7 +236,9 @@ fun TeamItem(team: Team) {
             Modifier.padding(8.dp)
                 .clip(RoundedCornerShape(4.dp))
                 .background(MaterialTheme.colors.surface)
-                .clickable(onClick = { /* Ignoring onClick */ }),
+                .clickable(onClick = {
+                    callback.invoke(team)
+                }),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
             ImageTeamItem(team.flag)
@@ -285,4 +302,10 @@ fun PreviewTeams() {
             add(Team(5, "Colombia", 0, 1, 2, 3))
         }
     )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewLoadingState() {
+    CircularProgressIndicator()
 }
