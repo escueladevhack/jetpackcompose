@@ -10,19 +10,19 @@ import kotlinx.coroutines.withContext
 
 object Repository {
 
-    private const val DELAY = 3000L
+    private const val DELAY = 1000L
 
     private val teams = listOf(
-        Team(1, "Argentina", 0),
-        Team(2, "Bolivia", 0),
-        Team(3, "Brasil", 0),
-        Team(4, "Chile", 0),
-        Team(5, "Colombia", 0),
-        Team(6, "Ecuador", 0),
-        Team(7, "Paraguay", 0),
-        Team(8, "Perú", 0),
-        Team(9, "Uruguay", 0),
-        Team(10, "Venezuela", 0),
+        Team(1, "Argentina", R.drawable.ic_launcher_background),
+        Team(2, "Bolivia", R.drawable.ic_launcher_background),
+        Team(3, "Brasil", R.drawable.ic_launcher_background),
+        Team(4, "Chile", R.drawable.ic_launcher_background),
+        Team(5, "Colombia", R.drawable.ic_launcher_background),
+        Team(6, "Ecuador", R.drawable.ic_launcher_background),
+        Team(7, "Paraguay", R.drawable.ic_launcher_background),
+        Team(8, "Perú", R.drawable.ic_launcher_background),
+        Team(9, "Uruguay", R.drawable.ic_launcher_background),
+        Team(10, "Venezuela", R.drawable.ic_launcher_background),
     )
 
     val argentinaPlayers = listOf(
@@ -101,6 +101,11 @@ object Repository {
     suspend fun getTeams() = withContext(Dispatchers.IO) {
         delay(DELAY)
         teams
+    }
+
+    suspend fun getTeam(id: Int) = withContext(Dispatchers.IO) {
+        delay(DELAY)
+        teams.first { it.id == id }
     }
 
     suspend fun getPlayers(teamId: Int) = withContext(Dispatchers.IO) {
