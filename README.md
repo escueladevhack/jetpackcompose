@@ -36,3 +36,13 @@ Esta clase es dictada por @facundomr, enfocada en material design y manejo de es
 La presentación de este módulo se encuentra en [Presentación 2](https://speakerdeck.com/jggomez/workshop-jetpack-compose-class-2)
 
 Video de la clase [Clase 2](https://youtu.be/0ZSbu6adcCg)
+
+### Rama Clase 2
+Esta clase es dictada por @brunoaybarg, se enfoca en navegación y animaciones, aquí encontraras:
+
+  - Uso de navigation
+  - Creación de animaciones
+
+La presentación de este módulo se encuentra en [Presentación 3](https://speakerdeck.com/jggomez/workshop-jetpack-compose-class-2)
+
+Video de la clase [Clase 3](https://youtu.be/0ZSbu6adcCg)
