@@ -62,7 +62,7 @@ fun DetailTeamActivityUI(
     matchesDraw: Int,
     players: List<Player>
 ) {
-    SouthAmericanQualifiersTheme(darkTheme = true) {
+    SouthAmericanQualifiersTheme(darkTheme = false) {
         Surface(
             modifier = modifier,
             color = MaterialTheme.colors.background

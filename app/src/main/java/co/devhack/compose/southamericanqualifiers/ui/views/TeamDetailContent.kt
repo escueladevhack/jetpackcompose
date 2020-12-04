@@ -1,6 +1,11 @@
 package co.devhack.compose.southamericanqualifiers.ui.views
 
 import androidx.annotation.DrawableRes
+import androidx.compose.animation.animatedColor
+import androidx.compose.animation.animatedFloat
+import androidx.compose.animation.core.AnimationConstants
+import androidx.compose.animation.core.repeatable
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -15,6 +20,7 @@ import androidx.compose.material.icons.filled.Flag
 import androidx.compose.material.icons.filled.SportsSoccer
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Providers
+import androidx.compose.runtime.onActive
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -111,13 +117,34 @@ fun TeamDetailContent(
 
 @Composable
 fun DetailHeadTeam(modifier: Modifier = Modifier, nameTeam: String, flagTeam: Int) {
+
+    val animatedColor = animatedColor(Color.Blue)
+    val animatedWidth = animatedFloat(initVal = 1f)
+
+    onActive {
+        animatedColor.animateTo(
+            targetValue = Color.Red,
+            anim = repeatable(
+                iterations = AnimationConstants.Infinite,
+                animation = tween(500)
+            )
+        )
+        animatedWidth.animateTo(
+            targetValue = 0.5f,
+            anim = repeatable(
+                iterations = AnimationConstants.Infinite,
+                animation = tween(500)
+            )
+        )
+    }
+
     Card(
         modifier = modifier
-            .fillMaxWidth()
+            .fillMaxWidth(animatedWidth.value)
             .padding(8.dp)
             .height(100.dp),
         elevation = 8.dp,
-        border = BorderStroke(2.dp, Color.Blue)
+        border = BorderStroke(2.dp, animatedColor.value)
     ) {
         Row(horizontalArrangement = Arrangement.SpaceAround) {
             Column(modifier = Modifier.align(alignment = Alignment.CenterVertically)) {
