@@ -37,7 +37,7 @@ La presentación de este módulo se encuentra en [Presentación 2](https://speak
 
 Video de la clase [Clase 2](https://youtu.be/0ZSbu6adcCg)
 
-### Rama Clase 2
+### Rama Clase 3
 Esta clase es dictada por @brunoaybarg, se enfoca en navegación y animaciones, aquí encontraras:
 
   - Uso de navigation
