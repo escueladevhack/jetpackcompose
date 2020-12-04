@@ -43,6 +43,4 @@ Esta clase es dictada por @brunoaybarg, se enfoca en navegación y animaciones, 
   - Uso de navigation
   - Creación de animaciones
 
-La presentación de este módulo se encuentra en [Presentación 3](https://speakerdeck.com/jggomez/workshop-jetpack-compose-class-2)
-
-Video de la clase [Clase 3](https://youtu.be/0ZSbu6adcCg)
+Video de la clase [Clase 3](https://youtu.be/4--jKMHUvb0)
